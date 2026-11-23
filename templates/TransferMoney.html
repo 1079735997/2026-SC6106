@@ -82,8 +82,8 @@
             async function transaction() {
                 result = await contract.methods.transaction().call();
                 document.getElementById('view_payer').innerText = "Payer: " + result[0];
-                document.getElementById('view_payee').innerText = "Payee: " + result[0];
-                document.getElementById('view_amount').innerText = "Amount: " + result[0];
+                document.getElementById('view_payee').innerText = "Payee: " + result[1];
+                document.getElementById('view_amount').innerText = "Amount: " + result[2];
 
             }
         </script>

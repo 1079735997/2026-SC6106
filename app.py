@@ -1,5 +1,7 @@
 # blockchain application
 
+import os
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -15,6 +17,13 @@ def main():
 @app.route("/transferMoney", methods=["GET", "POST"])
 def TransferMoney():
     return (render_template("TransferMoney.html"))
+
+
+@app.route("/storeMoney")
+def store_money():
+    return render_template(
+        "StoreMoney.html", contract_address=os.getenv("STORE_MONEY_CONTRACT_ADDRESS", "")
+    )
 
 
 if __name__ == "__main__":
